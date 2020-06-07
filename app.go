@@ -8,8 +8,8 @@ import (
 
 const MAX_WORDS = 200
 const FILENAME = "story.txt"
-const WORD1 = "then"
-const WORD2 = "Alice"
+const WORD1 = "When"
+const WORD2 = "it"
 
 func main() {
 	fmt.Println("MarkovChain Story Teller, Peter Hooper, 2020 MIT Licence")

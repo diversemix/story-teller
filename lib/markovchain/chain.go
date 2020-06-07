@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"math/rand"
+	"regexp"
 	"strings"
 )
 
@@ -23,8 +24,16 @@ func (m *MarkovChain) Length() int {
 	return len(m.chain)
 }
 
+func cleanString(s string) string {
+	re, err := regexp.Compile(`[^\w]`)
+	if err != nil {
+		return s
+	}
+	return re.ReplaceAllString(strings.ToLower(s), "")
+}
+
 func (m *MarkovChain) generateKey(p1 string, p2 string) string {
-	return strings.ToLower(p1) + "_" + strings.ToLower(p2)
+	return cleanString(p1) + "_" + cleanString(p2)
 }
 
 func (m *MarkovChain) Add(p1 string, p2 string, next string) {
@@ -33,7 +42,7 @@ func (m *MarkovChain) Add(p1 string, p2 string, next string) {
 		m.chain[key] = make(Occurrences)
 	}
 
-	m.chain[key][strings.ToLower(next)]++
+	m.chain[key][cleanString(next)]++
 }
 
 func (m *MarkovChain) Possibilities(p1 string, p2 string) Occurrences {
