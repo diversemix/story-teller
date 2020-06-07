@@ -16,3 +16,6 @@
 
 # Any downloaded story
 story.txt
+
+# Any binaries generated
+storyteller

@@ -1,4 +1,7 @@
-.PHONY: test build run
+.PHONY: test build run get_alice
+
+get_alice:
+	wget -O story.txt http://www.gutenberg.org/files/11/11-0.txt
 
 test:
 	cd lib/markovchain ; go test

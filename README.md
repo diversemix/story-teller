@@ -1,8 +1,10 @@
 # story-teller
+
 Example of the use of a markov chain
+
 ----
 
-In a nut shell this reads story and forms a (Markov Chain)[https://en.wikipedia.org/wiki/Markov_chain].
+In a nut shell this reads story and forms a [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).
 Then it will attempt to tell a story based on two words supplied.
 
 ## Example - Use Alice in Wonderland
